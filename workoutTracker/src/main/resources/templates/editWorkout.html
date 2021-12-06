@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Workout Tracker</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Edit a workout</h1>
+	<div>
+		<form th:object="${workout}" th:action="@{../save}" action="#"
+			method="post">
+			
+			<input type="hidden" id="id" th:field="*{id}" /> 
+			
+			<label for="activity">Activity</label>
+			<input type="text" id="activity" th:field="*{activity}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="duration">Duration</label> 
+			<input type="text" id="duration" th:field="*{duration}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="date">Date</label> 
+			<input type="text" id="date" th:field="*{date}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			
+			<label for="isbn">Calories burned</label> 
+			<input type="text" id="calories" th:field="*{calories}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<label for="location">Location</label> 
+			<select id="location"th:field="*{location}" class="form-control">
+				<option th:each="location: ${locations}" th:value="${location.id}"
+					th:text="${location.name}"></option>
+			</select>
+
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<input type="submit" value="Save"></input>
+			
+		</form>
+	</div>
+</body>
+</html>
