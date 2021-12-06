@@ -1,44 +1,54 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Workout Tracker</title>
+<link rel="stylesheet" href="stylesheet.css">
+<title>Edit Workout</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Edit a workout</h1>
-	<div>
+	
+	<div class="form-box">
 		<form th:object="${workout}" th:action="@{../save}" action="#"
 			method="post">
 			
+			<h2>Edit a workout</h2>
+
 			<input type="hidden" id="id" th:field="*{id}" /> 
 			
-			<label for="activity">Activity</label>
-			<input type="text" id="activity" th:field="*{activity}" />
-			<div style="clear: both; display: block; height: 10px;"></div>
 			
-			<label for="duration">Duration</label> 
-			<input type="text" id="duration" th:field="*{duration}" />
-			<div style="clear: both; display: block; height: 10px;"></div>
+			<div class="field-box">
+				<input type="text" id="activity" th:field="*{activity}" />
+				<label for="activity">Activity</label> 
+			</div>
 			
-			<label for="date">Date</label> 
-			<input type="text" id="date" th:field="*{date}" />
-			<div style="clear: both; display: block; height: 10px;"></div>
+			<div class="field-box">
+				<input type="text" id="duration" th:field="*{duration}" />
+				<label for="duration">Duration</label> 
+			</div>
 			
+			<div class="field-box">
+				<input type="text" id="date" th:field="*{date}" />
+				<label for="date">Date</label> 
+			</div>
 			
-			<label for="isbn">Calories burned</label> 
-			<input type="text" id="calories" th:field="*{calories}" />
-			<div style="clear: both; display: block; height: 10px;"></div>
+			<div class="field-box">
+				<input type="text" id="calories" th:field="*{calories}" />
+				<label for="isbn">Calories burned</label> 
+			</div>
 			
-			<label for="location">Location</label> 
-			<select id="location"th:field="*{location}" class="form-control">
-				<option th:each="location: ${locations}" th:value="${location.id}"
-					th:text="${location.name}"></option>
-			</select>
+			<label for="locationlist">Location</label>
+			
+			<div class="select-style">
+				<label for="locationlist">Location</label> 
+				<select id="locationlist" th:field="*{location}" class="form-control">
+					<option th:each="location: ${locations}" th:value="${location.id}"
+						th:text="${location.name}"></option>
+				</select>
+			</div>
 
-			<div style="clear: both; display: block; height: 10px;"></div>
-			
-			<input type="submit" value="Save"></input>
-			
+			<br><br>
+			<input type="submit" value="Save" class="button-5"></input>
+
 		</form>
 	</div>
 </body>

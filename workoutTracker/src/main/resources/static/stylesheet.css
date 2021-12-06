@@ -1,0 +1,232 @@
+/* colors:
+
+		button darker: ff0f27
+		button lighter: ff717f
+		text, cells, heading: ff5d6d
+		background: white
+		
+
+
+ */
+.button-5 {
+	align-items: center;
+	background-clip: padding-box;
+	background-color: #ff0f27;
+	border: 1px solid transparent;
+	border-radius: .25rem;
+	box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-flex;
+	font-family: system-ui, -apple-system, system-ui, "Helvetica Neue",
+		Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	justify-content: center;
+	line-height: 1.25;
+	margin: 0;
+	min-height: 3rem;
+	padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+	position: relative;
+	text-decoration: none;
+	transition: all 250ms;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: baseline;
+	width: auto;
+}
+
+#edit {
+	background-color: #ff717f;
+}
+
+.button-5:hover, .button-5:focus {
+	background-color: #ff5d6d;
+	box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button-5:hover {
+	transform: translateY(-1px);
+}
+
+.button-5:active {
+	background-color: #ff5d6d;
+	box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+	transform: translateY(0);
+}
+
+a {
+	color: white;
+	font-family: arial;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-style: italic;
+	font-weight: normal;
+}
+
+body {
+	background-color: white;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3 {
+	font-family: 'Arial';
+	color: #ff5d6d;
+	font-style: italic;
+	font-weight: bold;
+	position: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+table {
+	font-family: 'Arial';
+	margin: 25px auto;
+	border-collapse: collapse;
+	border: 1px solid #eee;
+	border-bottom: 2px solid #ff5d6d;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.10), 0px 10px 20px
+		rgba(0, 0, 0, 0.05), 0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px
+		rgba(0, 0, 0, 0.05);
+}
+
+tr {
+	background: #ffe6e9;
+}
+
+td {
+	color: #ff5d6d;
+}
+
+th, td {
+	color: #ff5d6d;
+	border: 1px solid #eee;
+	padding: 12px 35px;
+	border-collapse: collapse;
+	align-items: center;
+}
+
+th {
+	background: #ff5d6d;
+	color: white;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.form-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	padding: 40px;
+	transform: translate(-50%, -50%);
+	background: #ff5d6d;
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+	border-radius: 10px;
+}
+
+.form-box h2 {
+	margin: 0 0 30px;
+	padding: 0;
+	color: white;
+	text-align: center;
+}
+
+.form-box .field-box {
+	position: relative;
+}
+
+.form-box .field-box input {
+	width: 100%;
+	padding: 10px 0;
+	font-size: 14px;
+	color: white;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background: transparent;
+}
+
+.form-box .field-box label {
+	position: absolute;
+	width: 100%; top : 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: white;
+	pointer-events: none;
+	transition: .5s;
+	top: 0;
+}
+
+.form-box .field-box input:focus ~ label, .form-box .field-box input:valid 
+	~ label {
+	top: -20px;
+	left: 0;
+	color: white;
+	font-size: 12px;
+}
+
+.form-box form {
+	position: relative;
+	display: inline-block;
+	padding: 10px 20px;
+	color: white;
+	font-size: 16px;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	transition: .5s;
+	margin-top: 40px;
+	letter-spacing: 4px
+}
+
+.select-style {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+    background: #fff;
+    position: relative;
+    text-align: center;
+}
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.select-style:after {
+    top: 50%;
+    left: 85%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #000000;
+    border-width: 5px;
+    margin-top: -2px;
+    z-index: 100;
+}
+.select-style select:focus {
+    outline: none;
+}

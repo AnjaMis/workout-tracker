@@ -2,27 +2,51 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Workout List</title>
+<link rel="stylesheet" href="stylesheet.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Workouts</h1>
+	<h1>Workout Tracker</h1>
+
+	<h3 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
+
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Sign Out" class="button-5" />
+	</form>
 	<table>
 		<tr>
 			<th>Activity</th>
 			<th>Duration (min)</th>
 			<th>Date</th>
 			<th>Calories burned</th>
+			<th>Location</th>
+			<th> </th>
+			<th> </th>
 		</tr>
 		<tr th:each="workout : ${workouts}">
 			<td th:text="${workout.activity}"></td>
 			<td th:text="${workout.duration}"></td>
 			<td th:text="${workout.date}"></td>
 			<td th:text="${workout.calories}"></td>
-			<td><a th:href="@{/delete/{id}(id=${workout.id})}">Delete</a></td>
+			<td th:text="${workout.location.name}"></td>
+			<td sec:authorize="hasAuthority('ADMIN')">
+				<button class="button-5" role="button">
+					<a th:href="@{/delete/{id}(id=${workout.id})}">
+						Delete
+					</a>
+				</button>
+			</td>
+			<td sec:authorize="hasAuthority('ADMIN')">
+				<button class="button-5" id="edit" role="button">
+					<a th:href="@{/edit/{id}(id=${workout.id})}">
+						Edit
+					</a>
+				</button>
+			</td>
 
 		</tr>
 	</table>
-	<a href="/add">Add Workout</a>
+	<button class="button-5" role="button"><a href="/add">+ Add Workout</a></button>
 
 </body>
 </html>

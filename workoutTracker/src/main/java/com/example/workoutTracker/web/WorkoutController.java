@@ -48,6 +48,7 @@ public class WorkoutController {
     @RequestMapping(value = "/add")
     public String addWorkout(Model model){
     	model.addAttribute("workout", new Workout());
+    	model.addAttribute("locations", lrepository.findAll());
         return "addWorkout";
     }     
     
