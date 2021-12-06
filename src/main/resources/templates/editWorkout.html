@@ -17,29 +17,31 @@
 			
 			
 			<div class="field-box">
+				<label for="activity">Activity </label>
 				<input type="text" id="activity" th:field="*{activity}" />
-				<label for="activity">Activity</label> 
+				 
 			</div>
 			
 			<div class="field-box">
+				<label for="duration">Duration </label>
 				<input type="text" id="duration" th:field="*{duration}" />
-				<label for="duration">Duration</label> 
+				 
 			</div>
 			
 			<div class="field-box">
+				<label for="date">Date </label> 
 				<input type="text" id="date" th:field="*{date}" />
-				<label for="date">Date</label> 
+		
 			</div>
 			
 			<div class="field-box">
+				<label for="isbn">Calories burned </label>
 				<input type="text" id="calories" th:field="*{calories}" />
-				<label for="isbn">Calories burned</label> 
+				 
 			</div>
-			
-			<label for="locationlist">Location</label>
-			
+						
 			<div class="select-style">
-				<label for="locationlist">Location</label> 
+				<label for="locationlist">Location </label> 
 				<select id="locationlist" th:field="*{location}" class="form-control">
 					<option th:each="location: ${locations}" th:value="${location.id}"
 						th:text="${location.name}"></option>
